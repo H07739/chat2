@@ -50,7 +50,7 @@ async def register_user_if_not_exists(update: Update, context: CallbackContext, 
 
 
 async def start_handle(update: Update, context: CallbackContext):
-    await register_user_if_not_exists(update, context, update.message.from_user)
+    
     user_id = update.message.from_user.id
     
     db.set_user_attribute(user_id, "last_interaction", datetime.now())
